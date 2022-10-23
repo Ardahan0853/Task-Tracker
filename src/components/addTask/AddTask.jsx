@@ -37,7 +37,11 @@ const AddTask = ({ getTask }) => {
           <Form.Control
             type="text"
             placeholder="Enter task"
-            onChange={(e) => setTask(e.target.value)}
+            onChange={(e) => {
+            if(e.target.value){
+              setTask(e.target.value)
+            }
+            }} //Yukaridaki degistirdigim on change de bug duzeltmeye Çalıştım umarım yardımcı olmuşumdur.
             value={task}
             // yukardaki onChange içersine sadece fonksiyon ismini yazarak yukarıda fonksiyonuda tanımlayabilirdik. aşağıdaki fonk gibi
             // const handleDate = (e) => {
